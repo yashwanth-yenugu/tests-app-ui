@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import QuestionsForm from "./components/QuestionsFormComponent/QuestionsForm";
+import QuestionsList from "./components/QuestionsListComponent/QuestionsList";
+import { AppBar, Typography, makeStyles, Toolbar } from "@material-ui/core";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            Erudex
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Switch>
+        <Route path="/form">
+          <QuestionsForm />
+        </Route>
+        <Route path="/list">
+          <QuestionsList />
+        </Route>
+        <Route path="/">
+          <Redirect to="/form" />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

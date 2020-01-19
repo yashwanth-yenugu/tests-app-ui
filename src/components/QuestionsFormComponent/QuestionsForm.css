@@ -1,0 +1,22 @@
+.title {
+  margin-top: 10px;
+}
+
+.container {
+  margin: 15px;
+  width: 50%;
+}
+
+.flexForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.textField {
+  margin-top: 30px !important;
+}
+
+.submitButton {
+  margin-top: 40px;
+}

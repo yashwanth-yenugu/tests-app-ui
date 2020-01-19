@@ -1,0 +1,28 @@
+.questionWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 15px;
+}
+
+.queCard {
+  margin: 15px;
+  background-color: azure !important;
+}
+
+.title {
+  text-align: center;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question h3 {
+  color: chocolate;
+}
+
+.options {
+  margin-bottom: 10px;
+  color: crimson;
+}
